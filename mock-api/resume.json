@@ -1,0 +1,19 @@
+{
+    "name": "Eshaan Rathi",
+    "profession": "Software Engineer | AI Engineer",
+    "email": "erathi@scu.edu",
+    "experience": [
+        {
+            "position": "Software Eningeering Intern",
+            "company": "Align Technology",
+            "duration": "June 2023 - Sep 2023"
+        }
+    ],
+    "education": [
+        {
+            "degree": "Master of Science in Computer Science",
+            "university": "Santa Clara University",
+            "year": "2024"
+        }
+    ]
+}
