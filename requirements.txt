@@ -1,2 +1,3 @@
 flask
 pygit2
+mod_wsgi
