@@ -1,11 +1,8 @@
-# Use an Apache web server image
-FROM httpd:latest
+FROM python:3.7-slim
 
-# Copy source code to (container) Apache's document root
-COPY ./src/ /usr/local/apache2/htdocs/
+ENV resume-website=/var/www
 
-# Overwrite (container) Apache's httpd.conf with the one in project directory.
-COPY ./apache-config/httpd.conf /usr/local/apache2/conf/httpd.conf
+ADD . $resume-website
+WORKDIR $resume-website
 
-# Expose port 80
-EXPOSE 80
+RUN pip install -r $resume-website/requirements.txt
