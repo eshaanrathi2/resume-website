@@ -1,8 +1,23 @@
-FROM python:3.7-slim
+FROM python:3.10
 
-ENV resume-website=/var/www
+ENV CONTAINER_HOME=/var/www
 
-ADD . $resume-website
-WORKDIR $resume-website
+ADD . $CONTAINER_HOME
+WORKDIR $CONTAINER_HOME
 
-RUN pip install -r $resume-website/requirements.txt
+RUN pwd 
+# COPY requirements.txt /tmp/requirements.txt
+# RUN python3 -m pip install --upgrade pip setuptools wheel                                                                                                                                                                                                
+# RUN python3 -m pip install -r /tmp/requirements.txt  
+
+RUN pip3 install -r $CONTAINER_HOME/requirements.txt
+
+
+# FROM python:3.9-slim
+
+# WORKDIR /app
+# RUN PWD 
+
+# COPY . .
+
+# RUN pip install -r requirements.txt
