@@ -1,5 +1,4 @@
 flask
-gunicorn
 pygit2
 requests
 subprocess.run
