@@ -1,4 +1,0 @@
-flask
-pygit2
-requests
-subprocess.run

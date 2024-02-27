@@ -5,6 +5,8 @@ import subprocess
 from flask import jsonify
 
 API_URL = "http://localhost/resume"
+# API_URL = "https://google.com"
+
 
 resume_content = {
     "name": "Eshaan Rathi",
@@ -42,7 +44,7 @@ def test_api_positive_scenario():
         response = requests.get(API_URL)
         response.raise_for_status()
         print("Site is working. API is reachable.")
-    except requests.exceptions.RequestException as e:
+    except Exception as e:
         print(f"Failed to reach API: {e}")
         return False
 
@@ -60,7 +62,7 @@ def test_api_positive_scenario():
             print("Valid git branch")
         # print(type(response_data))
         # assert response_data == EXPECTED_RESPONSE
-    except (json.JSONDecodeError, AssertionError) as e:
+    except Exception as e:
         print(f"Response does not match expected format: {e}")
         # print("expected:", EXPECTED_RESPONSE)
         # print("received:",response_data)

@@ -27,7 +27,6 @@ services:
         aliases:
           - resume-website
 
-
   test:
     image: flask:latest
     container_name: tests
@@ -35,7 +34,9 @@ services:
       - nginx
     command: python3 src/tests/tests.py
     networks:
-      - my-network
+      my-network:
+        aliases:
+          - resume-website
 
 
   # test:
