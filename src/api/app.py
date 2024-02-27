@@ -30,7 +30,7 @@ def get_resume():
     resume_content_with_metadata = {
         "resume": resume_content,
         "git_branch": get_current_branch_name(),
-        "date_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "date_time": datetime.now().strftime("%Y-%m-%d %H:%M"),
     }
     return jsonify(resume_content_with_metadata)
 

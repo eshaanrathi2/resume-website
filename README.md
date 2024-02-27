@@ -17,3 +17,12 @@ Run the commands to build and run the Docker image:
 $ docker build -t httpd_1 .
 $ docker run -dit --name my-running-app -p 80:80 httpd_1
 <!-- docker run -it --rm --cpus 4 --memory 3G -v  -->
+
+
+docker-compose build --no-cache
+docker-compose up -d 
+docker-compose down
+
+
+Build and run together:
+docker-compose up --build

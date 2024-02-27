@@ -12,6 +12,8 @@ RUN pwd
 
 RUN pip3 install -r $CONTAINER_HOME/requirements.txt
 
+# RUN python3 $CONTAINER_HOME/src/tests/tests.py
+
 
 # FROM python:3.9-slim
 

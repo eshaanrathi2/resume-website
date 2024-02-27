@@ -12,18 +12,73 @@ services:
       - my-network
     depends_on:
       - flask
+
   flask:
+    image: flask:latest
     build:
       context: ./
       dockerfile: Dockerfile
     container_name: flask
     command: gunicorn --bind 0.0.0.0:8000 "src.api.app:app"
-    volumes:
-      - ./:/var/www
+    # volumes:
+    #   - ./:/var/www
     networks:
       my-network:
         aliases:
           - resume-website
+
+  test:
+    image: flask:latest
+    container_name: tests
+    depends_on:
+      - nginx
+    command: python3 src/tests/tests.py
+    networks:
+      my-network:
+        aliases:
+          - resume-website
+
+
+  # test:
+  #   build:
+  #     context: ./
+  #     dockerfile: src/tests/Dockerfile
+  #   depends_on:
+  #     - nginx
+  #   container_name: test
+  #   command: python3 tests.py
+        
+
+  # tests:
+  #   build:
+  #     context: ./
+  #     dockerfile: src/tests/Dockerfile
+  #   container_name: tests
+  #   volumes:
+  #     - .:/tests
+  #   networks:
+  #     - my-network
+  #   stdin_open: true # docker run -i
+  #   tty: true        # docker run -t
+
+  # tests:
+  #   build:
+  #     context: ./
+  #     dockerfile: src/tests/Dockerfile
+  #   container_name: tests
+  #   volumes:
+  #     - .:/tests
+  #   networks:
+  #     - my-network
+  #   stdin_open: true # docker run -i
+  #   tty: true        # docker run -t
+
+  # test:
+  #   image: flask:latest
+  #   container_name: test
+  #   depends_on:
+  #     - nginx
+  #   command: python3 test.py
 
 networks:
   my-network:
