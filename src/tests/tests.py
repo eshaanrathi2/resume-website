@@ -4,9 +4,7 @@ from datetime import datetime
 import subprocess
 from flask import jsonify
 
-API_URL = "http://localhost/resume"
-# API_URL = "https://google.com"
-
+API_URL = "http://nginx:80/resume"
 
 resume_content = {
     "name": "Eshaan Rathi",

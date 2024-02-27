@@ -22,3 +22,7 @@ $ docker run -dit --name my-running-app -p 80:80 httpd_1
 docker-compose build --no-cache
 docker-compose up -d 
 docker-compose down
+
+
+Build and run together:
+docker-compose up --build
