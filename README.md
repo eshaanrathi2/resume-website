@@ -12,30 +12,32 @@ Objective of this project is to create a mock API (with dummy resume content) an
 ## Software Requirements
 - Docker
 - Jenkins
+
 This README will not dicuss the installation steps of these softwares.
 
 ## Instructions to Run
 With Jenkins:
-    1. Make sure software requirements are fulfilled before runing the project.
-    2. Spin up Jenkins. Commands may vary by OS to OS. However, if you are on Mac, you can do:
-        brew services start jenkins-lts
-    3. Access Jenkins (default localhost:8080). Login via admin or create a user.
-    4. Inside Jenkins, docker plugins need to be installed.
-        Goto manage Jenkins -> Plugins -> Available Plugins.
-        Search for Docker. Choose "Docker" and "Docker Pipeline".
-        Click on save and let it download.
-    5. Create a new item, choose pipeline and give it a name. In Pipeline section, choose Pipeline script from SCM. Put in https://github.com/eshaanrathi2/resume-website.git
-    6. Once pipeline is created, click on build. One can see the results in Jenkins console.
+1.  Make sure software requirements are fulfilled before runing the project.
+
+2.  Spin up Jenkins. Commands may vary by OS to OS. However, if you are on Mac, you can do:
+    brew services start jenkins-lts
+3.  Access Jenkins (default localhost:8080). Login via admin or create a user.
+4.  Inside Jenkins, docker plugins need to be installed.
+    Goto manage Jenkins -> Plugins -> Available Plugins.
+    Search for Docker. Choose "Docker" and "Docker Pipeline".
+    Click on save and let it download.
+5.  Create a new item, choose pipeline and give it a name. In Pipeline section, choose Pipeline script from SCM. Put in https://github.com/eshaanrathi2/resume-website.git
+6.  Once pipeline is created, click on build. One can see the results in Jenkins console.
 
 Without Jenkins (directly with Docker):
-    1. Clone the repository with
-        git clone https://github.com/eshaanrathi2/resume-website.git
-    2. Go into the the repository that was cloned above
-        cd resume-website
-    2. Build image and start container
-        docker-compose up --build
-    3. Cleanup
-        docker-compose down
+1. Clone the repository with
+    git clone https://github.com/eshaanrathi2/resume-website.git
+2. Go into the the repository that was cloned above
+    cd resume-website
+2. Build image and start container
+    docker-compose up --build
+3. Cleanup
+    docker-compose down
 
 <!-- - To build image and start the containers:
     docker-compose up --build
