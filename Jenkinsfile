@@ -8,6 +8,12 @@ pipeline {
             steps {
                 sh "docker --version"
             }
-        } 
+        }
+        stage('Start container') {
+          steps {
+            sh 'docker-compose up --build'
+            //sh 'docker compose ps'
+          }
+        }
     }  
 }
