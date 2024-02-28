@@ -9,11 +9,18 @@ pipeline {
                 sh "docker --version"
             }
         }
-        stage('Start container') {
+        stage('Start server and run tests') {
           steps {
             sh 'docker-compose up --build'
             //sh 'docker compose ps'
           }
         }
-    }  
+    }
+    
+    post {
+        always {
+          sh 'docker compose down --remove-orphans -v'
+          sh 'docker compose ps'
+        }
+    }
 }
