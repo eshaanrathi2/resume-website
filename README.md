@@ -2,11 +2,13 @@
 - Nginx and Gunicorn for Web Server.
 - Docker for containerizing the application. Dockerfile and docker-compose to build image and container.
 - API is made available in the form of json, created in Python.
+- Jenkins for CI.
 - Makefile for running everything.
-- Git for version control.
+- Git for version control (Jenkins uses git repository).
 
 ## Software Requirements
 - Docker
+- Jenkins
 
 ## Instructions to Run
 - To build image and start the containers:
@@ -16,7 +18,23 @@
     docker-compose down
 
 - TO start Jenkins:
+    cd jenkins-config
+    docker build -t jenkins-image .
+
+
+    docker run -d \
+    -p 8080:8080 \
+    -v jenkins_home:/var/lib/jenkins \  # Adjust the volume path if needed
+    -v /var/run/docker.sock:/var/run/docker.sock \  # Optional: adjust based on your needs
+    my-jenkins-image
+
+
     docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+
+    docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+    
+
+    
 
 <!-- # resume-website
 Run the commands to build and run the Docker image:
