@@ -49,6 +49,18 @@ Without Jenkins (directly with Docker):
 3. Cleanup
     docker-compose down
 
+## Sample Runs
+Pipeline Build in action
+<img src="assets/build-snapshot.png" width="600">
+<!-- ![Pipeline Build in action](assets/build-snapshot.png) -->
+
+Console while container is up running and testing
+<img src="assets/instance.png" width="600">
+<!-- ![Console while container is up running and testing](assets/instance.png) -->
+
+
+
+
 <!-- - To build image and start the containers:
     docker-compose up --build
 
