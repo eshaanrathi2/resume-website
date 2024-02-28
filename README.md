@@ -13,6 +13,7 @@ Objective of this project is to create a mock API (with dummy resume content) an
 - Docker
 - Jenkins
 
+
 This README will not dicuss the installation steps of these softwares.
 
 ## Instructions to Run
@@ -31,6 +32,14 @@ With Jenkins:
 8. Exception handling is used to handle errors and edge cases. Standard test design patterns were not applied as focus was on to orchestrate the technologies and not API testing.
 
 Without Jenkins (directly with Docker):
+1. Clone the repository with
+    git clone https://github.com/eshaanrathi2/resume-website.git
+2. Go into the the repository that was cloned above
+    cd resume-website
+2. Build image and start container
+    docker-compose up --build
+3. Cleanup
+    docker-compose down
 1. Clone the repository with
     git clone https://github.com/eshaanrathi2/resume-website.git
 2. Go into the the repository that was cloned above
