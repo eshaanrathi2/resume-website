@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Start server and run tests') {
           steps {
-            sh 'docker-compose up --build -d --no-color --wait'
+            sh 'docker-compose up --build'
             sh 'docker compose ps'
             sh 'docker compose down --remove-orphans -v'
             sh 'docker compose ps'
