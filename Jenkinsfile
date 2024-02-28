@@ -13,14 +13,16 @@ pipeline {
           steps {
             sh 'docker-compose up --build -d --no-color --wait'
             sh 'docker compose ps'
+            sh 'docker compose down --remove-orphans -v'
+            sh 'docker compose ps'
           }
         }
     }
     
-    post {
-        always {
-          sh 'docker compose down --remove-orphans -v'
-          sh 'docker compose ps'
-        }
-    }
+    // post {
+    //     always {
+    //       sh 'docker compose down --remove-orphans -v'
+    //       sh 'docker compose ps'
+    //     }
+    // }
 }
