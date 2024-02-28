@@ -51,10 +51,13 @@ Without Jenkins (directly with Docker):
 
 ## Sample Runs
 Pipeline Build in action
+
 <img src="assets/build-snapshot.png" width="600">
 <!-- ![Pipeline Build in action](assets/build-snapshot.png) -->
 
+
 Console while container is up running and testing
+
 <img src="assets/instance.png" width="600">
 <!-- ![Console while container is up running and testing](assets/instance.png) -->
 
